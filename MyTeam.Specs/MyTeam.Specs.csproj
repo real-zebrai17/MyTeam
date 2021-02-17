@@ -22,12 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="MyTeam">
-      <HintPath>..\..\MyTeam\MyTeam\bin\Debug\netcoreapp3.1\MyTeam.dll</HintPath>
-    </Reference>
-    <Reference Include="MyTeam.TestUtilities">
-      <HintPath>..\..\MyTeam\MyTeam.TestUtilities\bin\Debug\netcoreapp3.1\MyTeam.TestUtilities.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\MyTeam.TestUtilities\MyTeam.TestUtilities.csproj" />
+    <ProjectReference Include="..\MyTeam\MyTeam.csproj" />
   </ItemGroup>
 
 </Project>
