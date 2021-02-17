@@ -2,6 +2,7 @@
 using MyTeam;
 using MyTeam.UseCases.SetUserPassword;
 using MyTeam.UseCases.UserLogin;
+using MyTeam.UseCases;
 
 namespace MyTeamApi.Controllers
 {
@@ -30,7 +31,12 @@ namespace MyTeamApi.Controllers
         [HttpPost("/Login")]
         public void Login(string userName, string password)
         {
-            var useCase = new UserLoginUseCase();
+            var useCase = new UserLoginUseCase(_context);
+            var result = useCase.Login(userName, password);
+            if (result.Status == UseCaseStatus.Unauthorized)
+                Unauthorized();
+
+            Ok();
         }
     }
 }

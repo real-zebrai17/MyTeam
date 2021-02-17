@@ -10,14 +10,12 @@ namespace MyTeam.Specs.Steps
     [Scope(Feature = "User Login")]
     public class WhenUserLogsIn : When<LoginResult>
     {
-        private readonly UserLoginUseCase _useCase = new UserLoginUseCase();
+        private readonly UserLoginUseCase _useCase = new UserLoginUseCase(TestFixture.Context);
 
         [When(@"User Logs in with (.*) User and (.*)")]
         public void WhenUserLogsInWithUserAnd(string userName, string password)
         {
             Result = _useCase.Login(userName, password);
-            Assert.Equal(Unauthorized, Result.Status);
-            Assert.Null(Result.User);
         }
 
         [Then(@"Login user Is Null")]

@@ -1,5 +1,4 @@
 ﻿using MyTeam.UseCases;
-using MyTeam.UseCases.PresentTeamSummaries;
 using TechTalk.SpecFlow;
 using Xunit;
 
